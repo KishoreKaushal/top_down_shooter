@@ -39,3 +39,22 @@ Add a `Node` to the `Player` node which will act as a gun controller. It will co
 * Add a `Position3D` to muzzle of the gun. It will act as marker from where the bullets are shot.
 * To get a node in godot: `get_node("/root/Level")`
 * Add an input map in `GunController`.
+
+## 3: Enemies
+
+* Scene - `KinematicBody`
+* Body - `MeshInstance`
+* Hit box - `CollisionShape`
+
+Add collision related nodes to bullet scenes.
+
+* `CollisionShape` can only be used with nodes which are derived from `CollisionObject`. Hence, add `Area` node to bullet.
+* Change the extent of the collision shape.
+* Connect the body entered signal to handle collisions.
+* Queue free the bullets which hits the enemy.
+
+![bullet_hb_extent](./img/bullet_hb_extent.png)
+
+* Add navigation mesh instance.
+* Add the code for tracking the player.
+

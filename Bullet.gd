@@ -13,3 +13,8 @@ func _physics_process(delta):
   
   if timer > KILL_TIME:
     queue_free()
+
+
+func _on_Area_body_entered(body):
+  print("Area entered!")
+  queue_free()
