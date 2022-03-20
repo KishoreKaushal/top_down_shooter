@@ -1,7 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://Main.gd" type="Script" id=2]
+[ext_resource path="res://GunController.gd" type="Script" id=3]
+[ext_resource path="res://Gun.tscn" type="PackedScene" id=4]
 
 [sub_resource type="CapsuleMesh" id=1]
 
@@ -39,6 +41,13 @@ transform = Transform( 0.574826, 0, 0, 0, -9.02564e-09, 0.574244, 0, -0.206483, 
 mesh = SubResource( 3 )
 skeleton = NodePath("../..")
 material/0 = SubResource( 4 )
+
+[node name="Hand" type="Position3D" parent="Player/Body"]
+transform = Transform( -4.37114e-08, -1.06581e-14, -1, 1, -4.37114e-08, -4.37114e-08, -4.37114e-08, -1, 1.25688e-14, 0.737489, 1.02654, 1.19209e-07 )
+
+[node name="GunController" type="Node" parent="Player"]
+script = ExtResource( 3 )
+StartingWeapon = ExtResource( 4 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( -0.668948, 0.569466, -0.477721, -0.00276786, 0.640782, 0.767718, 0.743304, 0.514885, -0.427073, -10.6186, 8.93559, 4.06391 )

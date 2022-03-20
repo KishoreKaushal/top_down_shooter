@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Gun.gd" type="Script" id=1]
+[ext_resource path="res://Bullet.tscn" type="PackedScene" id=2]
+
+[sub_resource type="CubeMesh" id=1]
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_color = Color( 0.0509804, 0.0470588, 0.0470588, 1 )
+
+[node name="Gun" type="Spatial"]
+script = ExtResource( 1 )
+Bullet = ExtResource( 2 )
+shot_intervals_ms = 50
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( -3.49691e-08, 0, 0.1792, 0, 0.137159, 0, -0.706462, 0, -6.91722e-09, 0, -0.0586545, -0.926772 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="."]
+transform = Transform( -1.2835e-08, 6.35179e-09, 0.1792, 0.273219, 0.100842, 0, -0.222477, 0.1101, -5.93495e-09, 0, -0.303763, -0.19431 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="."]
+transform = Transform( 1.09915e-08, 6.95473e-09, 0.1792, 0.299154, -0.0863585, 0, 0.190522, 0.120551, -5.93495e-09, 0, -0.365835, -0.946017 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
+
+[node name="Muzzle" type="Position3D" parent="."]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.00308514, 0, -1.6409 )
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
