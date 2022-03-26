@@ -13,10 +13,10 @@ func _ready():
     
 func equip_weapon(weapon_to_equip: Spatial):
   if equipped_weapon:
-    print("Delete current weapon")
+#    print("Delete current weapon")
     equipped_weapon.queue_free()
   else:
-    print("No weapon equipped")
+#    print("No weapon equipped")
     equipped_weapon = weapon_to_equip
     hand.add_child(equipped_weapon)
 

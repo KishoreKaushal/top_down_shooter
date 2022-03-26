@@ -58,3 +58,8 @@ Add collision related nodes to bullet scenes.
 * Add navigation mesh instance.
 * Add the code for tracking the player.
 
+### Killing Enemies
+
+* Create a stats scene, just a `Node` which can be dropped inside player or enemies to track hitpoints.
+
+* Stats node have a function `take_hit(damage: float)` which subtracts damage from current HP. When the HP is less than zero it sends a `die` signal (custom signal) to parent node, which the parent nodes need to handle.
