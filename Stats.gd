@@ -9,7 +9,7 @@ signal death
 
 func take_hit(damage):
   current_hp -= 1
-  print("I'm hit!! ", current_hp, "/", max_hp)
+#  print("I'm hit!! ", current_hp, "/", max_hp)
   
   if current_hp <= 0:
     die()

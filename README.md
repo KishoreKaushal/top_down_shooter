@@ -63,3 +63,9 @@ Add collision related nodes to bullet scenes.
 * Create a stats scene, just a `Node` which can be dropped inside player or enemies to track hitpoints.
 
 * Stats node have a function `take_hit(damage: float)` which subtracts damage from current HP. When the HP is less than zero it sends a `die` signal (custom signal) to parent node, which the parent nodes need to handle.
+
+### Waves of Enemies
+
+* Spatial node - `Spawner`
+* A `Timer` for `Spawner`
+* `EnemyScene` -- reference to what to spawn
